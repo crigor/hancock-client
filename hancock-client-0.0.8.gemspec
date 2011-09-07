@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = %q{Hancock SSO rack middleware written in sinatra}
   s.email = ["atmos@atmos.org", "tim@spork.in"]
   s.extra_rdoc_files = ["README.md", "LICENSE"]
-  s.files = ["LICENSE", "README.md", "Rakefile", "lib/hancock-client", "lib/hancock-client/default.rb", "lib/hancock-client/helpers", "lib/hancock-client/helpers/rack.rb", "lib/hancock-client/middleware.rb", "lib/hancock-client/mock_middleware.rb", "lib/hancock-client/sso.rb", "lib/hancock-client.rb", "spec/hancock_sinatra_spec.rb", "spec/mock_sso_user_spec.rb", "spec/pattern_exclusion_spec.rb", "spec/spec_helper.rb"]
+  s.files = ["LICENSE", "README.md", "Rakefile", "lib/hancock-client", "lib/hancock-client/default.rb", "lib/hancock-client/helpers", "lib/hancock-client/helpers/rack.rb", "lib/hancock-client/middleware.rb", "lib/hancock-client/mock_middleware.rb", "lib/hancock-client/sso.rb", "lib/hancock-client.rb"]
   s.homepage = %q{http://github.com/atmos/hancock-client}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
