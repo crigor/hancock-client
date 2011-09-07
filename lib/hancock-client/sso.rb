@@ -3,7 +3,6 @@ module Hancock
     module SSO
       def self.registered(app)
         app.use(Rack::OpenID, OpenID::Store::Filesystem.new("#{Dir.tmpdir}/openid"))
-        app.use(Rack::OpenID, OpenID::Store::Filesystem.new("#{Dir.tmpdir}/openid"))
         app.helpers Hancock::Client::Helpers::Rack
 
         app.helpers do
@@ -36,16 +35,14 @@ module Hancock
           next if request.path_info == '/sso/logout'
           next if excluded_path?
           next if sso_logged_in?
-          if request.get?
-            session[:hancock_sso_return_to] = request.fullpath[request.script_name.size..-1]
-          end
-          build_openid_headers
         end
 
         app.get '/sso/login' do
           if openid = request.env["rack.openid.response"]
             handle_openid_response(openid)
           end
+          # hack
+          session[:hancock_sso_return_to] =  session[:hancock_sso_return_to]
           build_openid_headers
         end
 
